@@ -1,6 +1,11 @@
 [build]
-  command = "pnpm install && pnpm --filter @mercuryworkshop/scramjet-demo... run build"
+  command = "pnpm install --no-frozen-lockfile && pnpm --filter @mercuryworkshop/scramjet-demo run build"
   publish = "packages/demo/dist"
 
 [build.environment]
   NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
